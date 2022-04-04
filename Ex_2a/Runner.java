@@ -53,6 +53,8 @@ public class Runner {
 		date /= 100;
 		int day = date;
 		System.out.printf("The year is %d , the month is %d, and the day is %d.", year, month, day);
+		
+		scanner.close();
 	}
 
 }
