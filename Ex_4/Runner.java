@@ -82,8 +82,31 @@ public class Runner {
 		}
 		System.out.println("Count: " + count);
 
+		
 		// question 10 ===============================================================
-		// TO DO !
+		System.out.print("Enter a number: ");
+		num = scanner.nextInt();
+		System.out.print("Enter a digit: ");
+		int digit = scanner.nextInt();
+		int base = 1, currRes;
+		
+		result = 0;
+		pow = base;
+		for (int i = 0; i < digit; i++) {
+			base *= 10;
+		}
+		while (num > 0) {
+			currRes = 0;
+			for (int i = 0; i < digit && num > 0; i++) {
+				currRes *= 10;
+				currRes += num % 10;
+				num /= 10;
+			}
+			result += currRes * pow;
+			pow *= base;
+		}
+		System.out.print("The new number: " + result);
+		System.out.println(" ");
 
 		// question 12 ===============================================================
 		System.out.print("Enter a number: \n");
