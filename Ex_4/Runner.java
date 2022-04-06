@@ -82,14 +82,13 @@ public class Runner {
 		}
 		System.out.println("Count: " + count);
 
-		
 		// question 10 ===============================================================
 		System.out.print("Enter a number: ");
 		num = scanner.nextInt();
 		System.out.print("Enter a digit: ");
 		int digit = scanner.nextInt();
 		int base = 1, currRes;
-		
+
 		result = 0;
 		pow = base;
 		for (int i = 0; i < digit; i++) {
@@ -140,7 +139,39 @@ public class Runner {
 		}
 
 		// question 16 ===============================================================
-		// TO DO
+		int numToCompare;
+		int[] seenArray = new int[count];
+
+		count = 10;
+		num = 0;
+
+		while (count > 0) {
+			while (true) {
+				num++;
+				sum = 0;
+				for (int i = 1; i < num; i++) {
+					if (num % i == 0) {
+						sum += i;
+					}
+				}
+				if (sum == num || (count < 10 && sum == seenArray[count])) {
+					continue;
+				}
+				numToCompare = sum;
+				sum = 0;
+				for (int i = 1; i < numToCompare; i++) {
+					if (numToCompare % i == 0) {
+						sum += i;
+					}
+				}
+				if (sum == num) {
+					count--;
+					System.out.printf("%d. %d and %d \n", 10 - count, num, numToCompare);
+					seenArray[count] = num;
+					break;
+				}
+			}
+		}
 
 		scanner.close();
 	}
