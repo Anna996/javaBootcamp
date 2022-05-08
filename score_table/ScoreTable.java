@@ -1,18 +1,17 @@
 package score_table;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.PriorityQueue;
 
 public class ScoreTable {
-	private PriorityQueue<Gamer> gamers;
+	private List<Gamer> gamers;
 	private final int TOP = 10;
 
 	public ScoreTable() {
-		gamers = new PriorityQueue<>();
+		gamers = new LinkedList<>();
 	}
 
 	public void addGamer(Gamer gamer) {
@@ -27,43 +26,12 @@ public class ScoreTable {
 		System.out.println("TOP 10 !");
 		System.out.println("========");
 
-		updatePriorityQueue();
+		Collections.sort(gamers);
 
 		Iterator<Gamer> iterator = gamers.iterator();
 		for (int i = 1; i <= TOP && iterator.hasNext(); i++) {
 			System.out.println(i + ". " + iterator.next());
 		}
-	}
-
-	private void updatePriorityQueue() {
-		PriorityQueue<Gamer> copy = getCopyOfGamers();
-
-		gamers.clear();
-		int size = copy.size();
-		for (int i = 0; i < size; i++) {
-			gamers.add(copy.remove());
-		}
-	}
-
-	private PriorityQueue<Gamer> getCopyOfGamers() {
-		PriorityQueue<Gamer> copy = new PriorityQueue<Gamer>();
-		Iterator<Gamer> iterator = gamers.iterator();
-
-		while (iterator.hasNext()) {
-			copy.add(iterator.next());
-		}
-		return copy;
-	}
-
-	private List<Gamer> getCopyListOfGamers() {
-		List<Gamer> copy = new ArrayList<Gamer>();
-		Iterator<Gamer> iterator = gamers.iterator();
-
-		while (iterator.hasNext()) {
-			copy.add(iterator.next());
-		}
-
-		return copy;
 	}
 
 	public void listByUserName() {
@@ -75,7 +43,7 @@ public class ScoreTable {
 			}
 		};
 
-		List<Gamer> copy = getCopyListOfGamers();
+		List<Gamer> copy = new LinkedList<>(gamers);
 		System.out.println("List sorted by the user name");
 		System.out.println("============================");
 		Collections.sort(copy, byUserName);
@@ -99,7 +67,7 @@ public class ScoreTable {
 			}
 		};
 
-		List<Gamer> copy = getCopyListOfGamers();
+		List<Gamer> copy = new LinkedList<>(gamers);
 		System.out.println("List sorted by the user country");
 		System.out.println("===============================");
 		Collections.sort(copy, byUserCountry);
@@ -108,15 +76,15 @@ public class ScoreTable {
 
 	public void listByUserRank() {
 		Comparator<Gamer> byUserRank = new Comparator<Gamer>() {
-			
+
 			@Override
 			public int compare(Gamer o1, Gamer o2) {
-				return Float.compare(o1.getRank(), o2.getRank());
+				return Float.compare(o2.getRank(), o1.getRank());
 			}
 		};
-		
-		List<Gamer> copy = getCopyListOfGamers();
-		Collections.sort(copy,byUserRank);
+
+		List<Gamer> copy = new LinkedList<>(gamers);
+		Collections.sort(copy, byUserRank);
 		System.out.println("List sorted by the user rank");
 		System.out.println("============================");
 		printValues(copy);
