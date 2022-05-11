@@ -41,6 +41,6 @@ public class Player {
 	}
 
 	public String info() {
-		return String.format("name: %s , card: %d", name, lastCard);
+		return String.format("name: %s , card: %d ", name, lastCard);
 	}
 }
