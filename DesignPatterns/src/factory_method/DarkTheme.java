@@ -18,6 +18,7 @@ public class DarkTheme extends Theme {
 
 	@Override
 	public void createTheme() {
+		System.out.println("\n\n");
 		System.out.println("creating... Dark theme....");
 	}
 }

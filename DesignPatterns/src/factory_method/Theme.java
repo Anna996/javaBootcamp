@@ -14,6 +14,6 @@ public abstract class Theme {
 	public abstract void createTheme();
 	
 	public String about() {
-		return String.format("This is a %s Theme. Id has a %s text", themeStyle, textStyle);
+		return String.format("This is a %s Theme. Id has a %s text.", themeStyle, textStyle);
 	}
 }

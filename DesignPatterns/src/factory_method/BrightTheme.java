@@ -18,6 +18,10 @@ public class BrightTheme extends Theme {
 
 	@Override
 	public void createTheme() {
+		System.out.println("\n\n");
 		System.out.println("creating... Bright theme....");
+		System.out.println(".");
+		System.out.println("..");
+		System.out.println("...");
 	}
 }

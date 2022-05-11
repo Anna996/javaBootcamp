@@ -8,5 +8,8 @@ public abstract class ThemeFactory {
 	public void runLogic() {
 		theme = createTheme();
 		theme.createTheme();
+		System.out.println("===========================================");
+		System.out.println(theme.about());
+		System.out.println("===========================================");
 	}
 }
