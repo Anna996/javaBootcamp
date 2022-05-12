@@ -6,5 +6,4 @@ public class DarkThemeFactory extends ThemeFactory {
 	public Theme createTheme() {
 		return new DarkTheme();
 	}
-
 }
