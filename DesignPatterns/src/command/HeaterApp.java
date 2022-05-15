@@ -2,7 +2,6 @@ package command;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ListIterator;
 
 public class HeaterApp {
 	private List<Command> history;
@@ -22,10 +21,7 @@ public class HeaterApp {
 
 	public void showHistory() {
 		int idx = history.size() < LAST_COMMANDS ? 0 : history.size() - LAST_COMMANDS;
-
-		for (int i = 0; i < LAST_COMMANDS; i++, idx++) {
-			System.out.println(history.get(idx));
-		}
+		history.subList(idx, history.size()).forEach(System.out::println);	
 	}
 
 	private void executeCommand(Command command) {
