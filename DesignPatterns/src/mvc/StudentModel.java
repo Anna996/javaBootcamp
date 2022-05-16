@@ -5,10 +5,6 @@ public class StudentModel {
 	private String firstName;
 	private String lastName;
 	private final int EXCELLENT_AVERAGE = 90;
-	
-	public StudentModel() {
-		this(null,null,null);
-	}
 
 	public StudentModel(String ID, String firstName, String lastName) {
 		this.ID = ID;
