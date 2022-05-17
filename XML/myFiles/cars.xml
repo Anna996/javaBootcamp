@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cars>
+  <car>
+    <manufacturer>Honda</manufacturer>
+    <model>A</model>
+    <year>2020</year>
+    <licence_plate>
+      <plate_number unique="true">1000</plate_number>
+      <color>Yellow</color>
+    </licence_plate>
+  </car>
+  <car>
+    <manufacturer>Toyota</manufacturer>
+    <model>Chr</model>
+    <year>2022</year>
+    <licence_plate>
+      <plate_number unique="true">1001</plate_number>
+      <color>White</color>
+    </licence_plate>
+  </car>
+  <car>
+    <manufacturer>BMW</manufacturer>
+    <model>Gold</model>
+    <year>2018</year>
+    <licence_plate>
+      <plate_number unique="true">1002</plate_number>
+      <color>White</color>
+    </licence_plate>
+  </car>
+</cars>
