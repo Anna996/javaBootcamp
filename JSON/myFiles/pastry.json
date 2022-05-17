@@ -1,0 +1,15 @@
+{
+  "name": "Pizza",
+  "calories": 2000,
+  "label": "DAIRY",
+  "ingredients": [
+    {
+      "name": "cheese",
+      "weight": 50.0
+    },
+    {
+      "name": "sugar",
+      "weight": 25.5
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "PARVE": [
+    {
+      "name": "Cake",
+      "calories": 1200,
+      "label": "PARVE",
+      "ingredients": [
+        {
+          "name": "chocolate",
+          "weight": 21.5
+        },
+        {
+          "name": "sugar",
+          "weight": 35.5
+        }
+      ]
+    },
+    {
+      "name": "Israel Cake",
+      "calories": 999,
+      "label": "PARVE",
+      "ingredients": [
+        {
+          "name": "chocolate",
+          "weight": 20.0
+        },
+        {
+          "name": "sugar",
+          "weight": 30.5
+        }
+      ]
+    }
+  ],
+  "MEAT": [
+    {
+      "name": "Spagetti",
+      "calories": 5000,
+      "label": "MEAT",
+      "ingredients": [
+        {
+          "name": "meat",
+          "weight": 200.0
+        },
+        {
+          "name": "soya",
+          "weight": 6.0
+        }
+      ]
+    },
+    {
+      "name": "Spain Spagetti",
+      "calories": 4910,
+      "label": "MEAT",
+      "ingredients": [
+        {
+          "name": "meat",
+          "weight": 125.0
+        },
+        {
+          "name": "soya",
+          "weight": 5.2
+        }
+      ]
+    }
+  ],
+  "DAIRY": [
+    {
+      "name": "Pizza",
+      "calories": 2000,
+      "label": "DAIRY",
+      "ingredients": [
+        {
+          "name": "cheese",
+          "weight": 50.0
+        },
+        {
+          "name": "sugar",
+          "weight": 25.5
+        }
+      ]
+    },
+    {
+      "name": "Italian Pizza",
+      "calories": 2015,
+      "label": "DAIRY",
+      "ingredients": [
+        {
+          "name": "cheese",
+          "weight": 30.0
+        },
+        {
+          "name": "sugar",
+          "weight": 25.0
+        }
+      ]
+    }
+  ]
+}

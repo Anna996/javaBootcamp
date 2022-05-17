@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Pizza",
+    "calories": 2000,
+    "label": "DAIRY",
+    "ingredients": [
+      {
+        "name": "cheese",
+        "weight": 50.0
+      },
+      {
+        "name": "sugar",
+        "weight": 25.5
+      }
+    ]
+  },
+  {
+    "name": "Spagetti",
+    "calories": 5000,
+    "label": "MEAT",
+    "ingredients": [
+      {
+        "name": "meat",
+        "weight": 200.0
+      },
+      {
+        "name": "soya",
+        "weight": 6.0
+      }
+    ]
+  },
+  {
+    "name": "Cake",
+    "calories": 1200,
+    "label": "PARVE",
+    "ingredients": [
+      {
+        "name": "chocolate",
+        "weight": 21.5
+      },
+      {
+        "name": "sugar",
+        "weight": 35.5
+      }
+    ]
+  }
+]

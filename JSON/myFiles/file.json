@@ -1,0 +1,47 @@
+{
+	"class": {
+		"students": [
+			{
+				"id": "1000",
+				"isMale": true,
+				"first name": "Avi",
+				"last name": "Levi",
+				"notes": [
+					{
+						"id": 1,
+						"from": "Avi",
+						"to": "Shalom",
+						"message": "I am good, and you?"
+					}
+				]
+			},
+			{
+				"id": "1001",
+				"isMale": false,
+				"first name": "Noa",
+				"last name": "Levi",
+				"notes": null
+			},
+			{
+				"id": "1002",
+				"isMale": true,
+				"first name": "Shalom",
+				"last name": "Cohen",
+				"notes": [
+					{
+						"id": 2,
+						"from": "Shalom",
+						"to": "Avi",
+						"message": "How are you?"
+					},
+					{
+						"id": 3,
+						"from": "Shalom",
+						"to": "Avi",
+						"message": "I am good too"
+					}
+				]
+			}
+		]
+	}
+}
