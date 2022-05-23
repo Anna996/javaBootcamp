@@ -9,13 +9,16 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class AliceFile {
 	private static final String FILE_NAME = "src\\multithreading\\concurrency\\ThreadPoolExecutor\\files\\alice.txt";
 	private BlockingQueue<Runnable> tasks = new ArrayBlockingQueue<>(10);
 	private ThreadPoolExecutor pool = new ThreadPoolExecutor(4, 6, 5, TimeUnit.SECONDS, tasks,
 			new ThreadPoolExecutor.CallerRunsPolicy());
-	private volatile Map<String, Integer> wordsCounterMap;
+	private Map<String, Integer> wordsCounterMap;
+	private Lock lock = new ReentrantLock();
 
 	public AliceFile() {
 		wordsCounterMap = new HashMap<>();
@@ -32,12 +35,14 @@ public class AliceFile {
 
 				pool.execute(() -> {
 					for (String word : words) {
+						lock.lock();
 						if (wordsCounterMap.containsKey(word)) {
 							int counter = 1 + wordsCounterMap.get(word);
 							wordsCounterMap.replace(word, counter);
 						} else {
 							wordsCounterMap.put(word, 1);
 						}
+						lock.unlock();
 					}
 				});
 			}
