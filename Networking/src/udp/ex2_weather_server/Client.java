@@ -35,14 +35,11 @@ public class Client {
 			System.out.println("Client started on port " + port);
 
 			do {
-				// creating data
-				System.out.println("Enter a message to send:");
-				dataToSend = scanner.nextLine();
-				send();
-				receive();
-				System.out.println("Server response: " + serverMsg);
-
-			} while (!dataToSend.toLowerCase().equals("quit"));
+				System.out.print("Enter a city: ");
+				handleData();
+			} while (!Character.isLetter(serverMsg.charAt(0)));
+			
+			handleData();
 
 		} catch (SocketException e) {
 			System.err.println("client socket creation failed");
@@ -57,6 +54,13 @@ public class Client {
 			System.out.println("client disconnected");
 			disconnect();
 		}
+	}
+	
+	private void handleData() throws IOException {
+		dataToSend = scanner.nextLine();
+		send();
+		receive();
+		System.out.println("Server response: " + serverMsg);
 	}
 
 	public void send() throws IOException {

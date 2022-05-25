@@ -40,7 +40,7 @@ public class Server {
 				boolean isExist = service.isExists(clientMsg);
 				respondMsg = isExist
 						? "Select the type of data you wish to get:\n1. Temperature 2. Humidity 3. Temperature and humidity\n"
-						: "The city does not exists in the data";
+						: "-The city does not exists in the data";
 				send();
 				
 				if (isExist) {
