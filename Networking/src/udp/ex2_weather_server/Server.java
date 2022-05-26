@@ -16,14 +16,14 @@ public class Server {
 	private String lastCityName;
 	private InetAddress clientAddress;
 	int clientPort;
-	private WeatherService service;
+	private WeatherDB weatherDB;
 	private String respondMsg;
 	private final static int INPUT_BUFFER_SIZE = 1024;
 
 	public Server(int port) {
 		this.port = port;
-		service = new WeatherService();
-		service.initDefault();
+		weatherDB = new WeatherDB();
+		weatherDB.initDefault();
 	}
 
 	public void start() {
@@ -37,7 +37,7 @@ public class Server {
 				receive();
 				System.out.println("client " + clientAddress + " sent: " + clientMsg);
 				
-				boolean isExist = service.isExists(clientMsg);
+				boolean isExist = weatherDB.isExists(clientMsg);
 				respondMsg = isExist
 						? "Select the type of data you wish to get:\n1. Temperature 2. Humidity 3. Temperature and humidity\n"
 						: "-The city does not exists in the data";
@@ -103,15 +103,15 @@ public class Server {
 	}
 	
 	private String getCityName() {
-		return service.getCityName(clientMsg);
+		return weatherDB.getCityName(clientMsg);
 	}
 	
 	private String getTemperature() {
-		return "Temperature: " + service.getTemperature(lastCityName) + "c";
+		return "Temperature: " + weatherDB.getTemperature(lastCityName) + "c";
 	}
 	
 	private String getHumidity() {
-		return "Humidity: " + service.getHumidity(lastCityName) + "%";
+		return "Humidity: " + weatherDB.getHumidity(lastCityName) + "%";
 	}
 
 	public static void main(String[] args) {

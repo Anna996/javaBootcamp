@@ -3,10 +3,10 @@ package udp.ex2_weather_server;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WeatherService {
+public class WeatherDB {
 	private Map<String, Forecast> forecasts;
 
-	public WeatherService() {
+	public WeatherDB() {
 		forecasts = new HashMap<>();
 	}
 
